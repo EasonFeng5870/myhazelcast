@@ -1,0 +1,36 @@
+<hazelcast>
+	<group>
+		<name>local</name>
+		<password>12qwaszx</password>
+	</group>
+	<network>
+		<port auto-increment="true">5701</port>
+		<join>
+			<multicast enabled="false">
+				<multicast-group>224.2.2.3</multicast-group>
+				<multicast-port>54327</multicast-port>
+			</multicast>
+			<tcp-ip enabled="true">
+				<interface>127.0.0.1</interface>
+			</tcp-ip>
+		</join>
+		<interfaces enabled="false">
+			<interface>10.3.17.*</interface>
+		</interfaces>
+	</network>
+	<executor-service>
+		<core-pool-size>16</core-pool-size>
+		<max-pool-size>64</max-pool-size>
+		<keep-alive-seconds>60</keep-alive-seconds>
+	</executor-service>
+	<map name="account_migration_cache">
+        <eviction-policy>LRU</eviction-policy>
+        <max-size>200000</max-size>
+        <eviction-percentage>5</eviction-percentage>
+    </map>
+    <map name="provisioning_cache">
+        <eviction-policy>LRU</eviction-policy>
+        <max-size>200000</max-size>
+        <eviction-percentage>5</eviction-percentage>
+    </map>
+</hazelcast>

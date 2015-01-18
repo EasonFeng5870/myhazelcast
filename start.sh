@@ -1,0 +1,1 @@
+java -jar hazelcast-all-2.6.4.jar; -Dhazelcast,config=hazelcast.xml com.hazelcast.examples.StartServer
